@@ -16,7 +16,8 @@
     "react": "19.2.0",
     "react-native": "0.83.1",
     "react-native-safe-area-context": "^5.5.2",
-    "react-native-screens": "^4.19.0"
+    "react-native-screens": "^4.19.0",
+    "@packages/app2": "*"
   },
   "devDependencies": {
     "@babel/core": "^7.25.2",
@@ -42,6 +43,7 @@
     "node": ">=20"
   },
   "workspaces": [
-    "features/src/*"
+    "features/src/*",
+    "packages/*"
   ]
 }
