@@ -1,13 +1,13 @@
+import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
+import React from 'react';
 import { useNavigation } from '@react-navigation/native';
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
-import { RootStackParamList } from './src/navigation/RootNavigator';
-import { StyleSheet, TouchableOpacity, View } from 'react-native';
-import RootNavigator from './src/navigation/RootNavigator';
-import { Text } from 'react-native';
+import { RootStackParamList } from '../../navigation/RootNavigator';
 
-function App({ navigation }: { navigation: any }) {
-  // const navigation =
-  //   useNavigation<NativeStackNavigationProp<RootStackParamList>>();
+const Home = () => {
+  const navigation =
+    useNavigation<NativeStackNavigationProp<RootStackParamList>>();
+
   return (
     <View style={styles.container}>
       <TouchableOpacity style={styles.button}>
@@ -16,17 +16,14 @@ function App({ navigation }: { navigation: any }) {
       <TouchableOpacity
         style={styles.button}
         onPress={() => {
-          navigation.push('App2');
+          navigation.navigate('App2');
         }}
       >
         <Text style={styles.buttonText}>App 2</Text>
       </TouchableOpacity>
     </View>
-    // <>
-    //    <RootNavigator />
-    // </>
   );
-}
+};
 
 const styles = StyleSheet.create({
   container: {
@@ -37,6 +34,7 @@ const styles = StyleSheet.create({
   button: {
     padding: 10,
     backgroundColor: 'blue',
+    marginBottom: 10,
   },
   buttonText: {
     color: 'white',
@@ -44,4 +42,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default App;
+export default Home;
